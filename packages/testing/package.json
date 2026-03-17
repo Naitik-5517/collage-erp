@@ -1,0 +1,20 @@
+{
+  "name": "@college-erp/testing",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "lint": "biome lint ./src",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@college-erp/types": "*",
+    "@college-erp/utils": "*"
+  },
+  "devDependencies": {
+    "@college-erp/config": "*",
+    "@types/jest": "^29.5.0",
+    "typescript": "^5.5.0"
+  }
+}

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Pre-commit hook to run linting and type checking
+
+echo "🔍 Running pre-commit checks..."
+
+# Run lint-staged
+npx lint-staged
+
+# Check if there are any staged TypeScript files
+if git diff --cached --name-only | grep -q '\.tsx\?$'; then
+  echo "📝 Type checking..."
+  npm run type-check
+
+  if [ $? -ne 0 ]; then
+    echo "❌ Type check failed. Please fix the errors before committing."
+    exit 1
+  fi
+fi
+
+echo "✅ Pre-commit checks passed!"

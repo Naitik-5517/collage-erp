@@ -1,0 +1,52 @@
+{
+  "name": "college-erp",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@10.9.2",
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --concurrency=30",
+    "build": "turbo run build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:integration": "jest --testMatch='**/tests/integration/**/*.test.ts'",
+    "test:e2e": "jest --testMatch='**/tests/e2e/**/*.test.ts'",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --fix",
+    "format": "turbo run format",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean",
+    "db:generate": "npm run generate --workspace=@college-erp/db",
+    "db:migrate": "npm run migrate --workspace=@college-erp/db",
+    "db:seed": "npm run seed --workspace=@college-erp/db",
+    "db:reset": "npm run reset --workspace=@college-erp/db",
+    "db:studio": "npm run studio --workspace=@college-erp/db",
+    "db:backup": "node scripts/db/backup.js",
+    "db:restore": "node scripts/db/restore.js",
+    "setup": "node scripts/setup/setup.js",
+    "check:deps": "node scripts/dev/check-deps.js",
+    "validate:deploy": "node scripts/deploy/validate.js",
+    "prepare": "husky install || true"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "@biomejs/biome": "^1.8.0",
+    "typescript": "^5.5.0",
+    "jest": "^29.7.0",
+    "@types/jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.0",
+    "dotenv": "^16.4.0",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}

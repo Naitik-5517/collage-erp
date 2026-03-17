@@ -1,0 +1,26 @@
+{
+  "name": "@college-erp/db",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "generate": "drizzle-kit generate --config=drizzle.config.ts",
+    "migrate": "drizzle-kit migrate --config=drizzle.config.ts",
+    "push": "drizzle-kit push --config=drizzle.config.ts",
+    "studio": "drizzle-kit studio --config=drizzle.config.ts",
+    "seed": "tsx src/seed/index.ts",
+    "reset": "tsx src/seed/reset.ts",
+    "dev": "echo @college-erp/db has no dev server"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.33.0",
+    "postgres": "^3.4.0",
+    "drizzle-zod": "^0.5.1",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.24.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.5.0",
+    "@types/node": "^20.0.0"
+  }
+}

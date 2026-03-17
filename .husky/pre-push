@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Pre-push hook to run tests
+
+echo "🧪 Running tests before push..."
+
+npm run test
+
+if [ $? -ne 0 ]; then
+  echo "❌ Tests failed. Please fix them before pushing."
+  exit 1
+fi
+
+echo "✅ All tests passed! Pushing..."

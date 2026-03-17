@@ -1,0 +1,19 @@
+{
+  "name": "@college-erp/emails",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "echo @college-erp/emails has no dev server",
+    "build": "echo emails build ok",
+    "lint": "echo emails lint ok"
+  },
+  "dependencies": {
+    "resend": "^3.4.0",
+    "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/react": "^18.0.0"
+  }
+}

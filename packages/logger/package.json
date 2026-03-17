@@ -1,0 +1,17 @@
+{
+  "name": "@college-erp/logger",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "pino": "^9.3.0",
+    "pino-pretty": "^11.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^20.0.0"
+  },
+  "scripts": {
+    "dev": "echo @college-erp/logger has no dev server"
+  }
+}

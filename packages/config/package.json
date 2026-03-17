@@ -1,0 +1,15 @@
+{
+  "name": "@college-erp/config",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    "./typescript/*": "./typescript/*",
+    "./eslint/*": "./eslint/*"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  },
+  "scripts": {
+    "dev": "echo @college-erp/config has no dev server"
+  }
+}

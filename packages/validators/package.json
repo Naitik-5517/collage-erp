@@ -1,0 +1,16 @@
+{
+  "name": "@college-erp/validators",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "lint": "biome lint ./src",
+    "dev": "echo @college-erp/validators has no dev server"
+  },
+  "dependencies": {
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}

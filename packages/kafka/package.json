@@ -1,0 +1,16 @@
+{
+  "name": "@college-erp/kafka",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^20.0.0"
+  },
+  "scripts": {
+    "dev": "echo @college-erp/kafka has no dev server"
+  }
+}
