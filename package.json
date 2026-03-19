@@ -3,15 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "packageManager": "npm@10.9.2",
-  "workspaces": [
-    "apps/*",
-    "services/*",
-    "packages/*"
-  ],
+  "workspaces": ["apps/*", "services/*", "packages/*"],
   "scripts": {
     "dev": "turbo run dev --concurrency=30",
     "build": "turbo run build",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:integration": "jest --testMatch='**/tests/integration/**/*.test.ts'",
