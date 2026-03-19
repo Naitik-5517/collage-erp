@@ -1,4 +1,9 @@
+import { config as loadEnv } from 'dotenv';
+import { resolve } from 'node:path';
 import { z } from 'zod';
+
+// Load .env.local file
+loadEnv({ path: resolve(process.cwd(), '.env.local') });
 
 const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),

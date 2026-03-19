@@ -32,7 +32,7 @@ export async function retry<T>(
       return await fn();
     } catch (error) {
       lastError = error as Error;
-      
+
       if (attempt < maxAttempts) {
         await sleep(Math.min(delay, maxDelay));
         delay *= backoffMultiplier;

@@ -7,14 +7,14 @@ export async function waitFor(
 ): Promise<void> {
   const { timeout = 5000, interval = 100 } = options;
   const start = Date.now();
-  
+
   while (Date.now() - start < timeout) {
     if (await condition()) {
       return;
     }
     await new Promise(resolve => setTimeout(resolve, interval));
   }
-  
+
   throw new Error(`Timeout waiting for condition after ${timeout}ms`);
 }
 

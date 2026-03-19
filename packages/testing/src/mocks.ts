@@ -23,7 +23,7 @@ export function mockResponse(): any {
     data: null,
     headers: {},
   };
-  
+
   res.status = jest.fn().mockReturnValue(res);
   res.json = jest.fn().mockImplementation((data) => {
     res.data = data;
@@ -38,7 +38,7 @@ export function mockResponse(): any {
   res.cookie = jest.fn().mockReturnValue(res);
   res.clearCookie = jest.fn().mockReturnValue(res);
   res.redirect = jest.fn().mockReturnValue(res);
-  
+
   return res;
 }
 
@@ -92,7 +92,7 @@ export function mockKafkaConsumer(): any {
  */
 export function mockRedisClient(): any {
   const store = new Map();
-  
+
   return {
     get: jest.fn().mockImplementation((key: string) => Promise.resolve(store.get(key) || null)),
     set: jest.fn().mockImplementation((key: string, value: any) => {

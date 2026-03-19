@@ -18,7 +18,7 @@ export async function traceAsync<T>(
   attributes?: Record<string, any>
 ): Promise<T> {
   const span = createSpan(name, attributes);
-  
+
   try {
     const result = await context.with(trace.setSpan(context.active(), span), () => fn(span));
     span.setStatus({ code: SpanStatusCode.OK });
@@ -44,7 +44,7 @@ export function traceSync<T>(
   attributes?: Record<string, any>
 ): T {
   const span = createSpan(name, attributes);
-  
+
   try {
     const result = context.with(trace.setSpan(context.active(), span), () => fn(span));
     span.setStatus({ code: SpanStatusCode.OK });

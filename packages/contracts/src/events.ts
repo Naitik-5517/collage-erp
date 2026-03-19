@@ -1,6 +1,6 @@
 /**
  * Domain Events
- * 
+ *
  * These events are published to Kafka for inter-service communication
  */
 

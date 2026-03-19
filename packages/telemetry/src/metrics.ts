@@ -7,11 +7,11 @@ const meter = metrics.getMeter('college-erp');
  */
 export class Counter {
   private counter;
-  
+
   constructor(name: string, description?: string) {
     this.counter = meter.createCounter(name, { description });
   }
-  
+
   increment(value = 1, attributes?: Record<string, any>) {
     this.counter.add(value, attributes);
   }
@@ -22,11 +22,11 @@ export class Counter {
  */
 export class Histogram {
   private histogram;
-  
+
   constructor(name: string, description?: string) {
     this.histogram = meter.createHistogram(name, { description });
   }
-  
+
   record(value: number, attributes?: Record<string, any>) {
     this.histogram.record(value, attributes);
   }
@@ -37,12 +37,12 @@ export class Histogram {
  */
 export class Gauge {
   private gauge;
-  
+
   constructor(name: string, callback: () => number, description?: string) {
     this.gauge = meter.createObservableGauge(name, {
       description,
     });
-    
+
     this.gauge.addCallback((observableResult) => {
       observableResult.observe(callback());
     });

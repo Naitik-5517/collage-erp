@@ -18,7 +18,7 @@ export const customMatchers = {
   toBeValidEmail(received: string) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const pass = emailRegex.test(received);
-    
+
     return {
       pass,
       message: () =>
@@ -27,11 +27,11 @@ export const customMatchers = {
           : `expected ${received} to be a valid email`,
     };
   },
-  
+
   toBeValidPhone(received: string) {
     const phoneRegex = /^\+?[1-9]\d{1,14}$/;
     const pass = phoneRegex.test(received);
-    
+
     return {
       pass,
       message: () =>
@@ -40,11 +40,11 @@ export const customMatchers = {
           : `expected ${received} to be a valid phone number`,
     };
   },
-  
+
   toBeValidDate(received: any) {
     const date = new Date(received);
     const pass = date instanceof Date && !isNaN(date.getTime());
-    
+
     return {
       pass,
       message: () =>
@@ -53,11 +53,11 @@ export const customMatchers = {
           : `expected ${received} to be a valid date`,
     };
   },
-  
+
   toBeInPast(received: Date | string) {
     const date = new Date(received);
     const pass = date < new Date();
-    
+
     return {
       pass,
       message: () =>
@@ -66,11 +66,11 @@ export const customMatchers = {
           : `expected ${received} to be in the past`,
     };
   },
-  
+
   toBeInFuture(received: Date | string) {
     const date = new Date(received);
     const pass = date > new Date();
-    
+
     return {
       pass,
       message: () =>

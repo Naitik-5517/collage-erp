@@ -9,11 +9,11 @@ export interface AcademicServiceContract {
   createCourse(data: Partial<Course>): Promise<Course>;
   updateCourse(id: string, data: Partial<Course>): Promise<Course>;
   deleteCourse(id: string): Promise<void>;
-  
+
   getCourseOffering(id: string): Promise<CourseOffering | null>;
   listCourseOfferings(filters: any): Promise<CourseOffering[]>;
   createCourseOffering(data: Partial<CourseOffering>): Promise<CourseOffering>;
-  
+
   markAttendance(data: MarkAttendanceData): Promise<void>;
   getAttendance(studentId: string, courseOfferingId: string): Promise<Attendance[]>;
   getAttendancePercentage(studentId: string, courseOfferingId: string): Promise<number>;
@@ -45,12 +45,12 @@ export const AcademicEndpoints = {
   CREATE_COURSE: '/courses',
   UPDATE_COURSE: '/courses/:id',
   DELETE_COURSE: '/courses/:id',
-  
+
   // Course Offerings
   GET_OFFERING: '/course-offerings/:id',
   LIST_OFFERINGS: '/course-offerings',
   CREATE_OFFERING: '/course-offerings',
-  
+
   // Attendance
   MARK_ATTENDANCE: '/attendance',
   GET_ATTENDANCE: '/attendance/student/:studentId/course/:courseId',
